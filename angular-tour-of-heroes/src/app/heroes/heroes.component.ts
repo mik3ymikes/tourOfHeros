@@ -20,7 +20,7 @@ hero: Hero={
 // selectedHero:Hero
 
 onSelect(hero: Hero){
-
+  this.selectedHero=hero
   console.log(hero)
   // this.selectedHero=hero
 }
