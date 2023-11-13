@@ -12,11 +12,14 @@ import { OnInit } from '@angular/core';
 
 
 
-export class HeroesComponent {
-  constructor(private heroservice:HeroService){}
+export class HeroesComponent implements OnInit {
+  constructor(private heroservice:HeroService){
+
+
+  }
 
   ngOnInit(): void {
-    this.getHeroes();
+    this.getHeros();
   }
 
 
