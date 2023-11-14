@@ -32,7 +32,10 @@ export class HeroesComponent implements OnInit {
 }
 
 getHeros():void{
-  this.heroes=this.heroservice.getHeros()
+ this.heroservice.getHeroes()
+ .subscribe(heroes =>{
+  this.heroes=heroes
+ })
 }
 
 
