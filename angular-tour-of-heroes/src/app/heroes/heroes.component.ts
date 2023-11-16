@@ -14,8 +14,9 @@ import { MessageService } from '../message.service';
 
 
 export class HeroesComponent implements OnInit {
-  constructor(private heroservice:HeroService,
-    private meessageService:MessageService){}
+  heroes:Hero[]=[]
+  constructor(private heroservice:HeroService){}
+    // private meessageService:MessageService){}
 
 
 
@@ -24,13 +25,9 @@ export class HeroesComponent implements OnInit {
   }
 
 
-  heroes:Hero[]=[]
-  selectedHero?: Hero
+  // heroes:Hero[]=[]
+  // selectedHero?: Hero
 
-//   hero: Hero={
-//   id:1,
-//   name:"windstorm"
-// }
 
 getHeros():void{
  this.heroservice.getHeroes()
@@ -41,12 +38,12 @@ getHeros():void{
 
 
 
-onSelect(hero: Hero){
-  this.selectedHero=hero
-  this.meessageService.add('HeoresComponent:Selected hero id=' + hero.id)
-  console.log(hero)
-  // this.selectedHero=hero
-}
+// onSelect(hero: Hero){
+//   this.selectedHero=hero
+//   this.meessageService.add('HeoresComponent:Selected hero id=' + hero.id)
+//   console.log(hero)
+//   // this.selectedHero=hero
+// }
 
 
 
