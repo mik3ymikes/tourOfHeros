@@ -16,7 +16,7 @@ import { OnInit } from '@angular/core';
 
 
 
-export class HeroDetailComponent {
+export class HeroDetailComponent implements OnInit{
 
   ngOnInit(): void {
     this.getHero();
