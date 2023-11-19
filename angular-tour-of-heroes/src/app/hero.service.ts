@@ -34,6 +34,10 @@ private handleError<T>(operation='operation', result?:T){
   }
 }
 
+httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl)
     .pipe(
@@ -52,6 +56,13 @@ private handleError<T>(operation='operation', result?:T){
     );
 }
 
+
+updateHero(hero: Hero): Observable<any> {
+  return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
+    tap(_ => this.log(`updated hero id=${hero.id}`)),
+    catchError(this.handleError<any>('updateHero'))
+  );
+}
 
 
 }
